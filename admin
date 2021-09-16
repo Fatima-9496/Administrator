@@ -1,0 +1,138 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>//to use exit(0)
+#include <conio.h>//to use system clean
+using namespace std;
+
+
+
+struct patientInfo{
+     string name,tipFromDoc,recommend;
+     int phone;
+     char address;
+     char bloodType;
+     int age,weight,height;
+	   int id;
+     string passcode2,passcode;
+};
+
+struct doctor{
+     string name;
+     int phone;
+     char address;
+    string passcode;
+
+}d[1000];
+
+void Administrator();
+void menu();
+void patient();
+void newPatient();
+void oldPatient();
+void doctor();
+void hospital();
+void medicalTip();
+void edit();
+int c = 0;
+int id = 1;
+
+
+  struct patientInfo p[1000];
+
+int main()
+{
+    int id;
+    int c=0;
+    menu();
+
+return 0;
+}
+void menu(){
+char opp;
+system("cls");
+cout<<"menu"<<endl;
+cout<<"1.Administrator"<<endl;
+cout<<"2.patient"<<endl;
+cout<<"3.doctor"<<endl;
+cout<<"4.hospital"<<endl;
+cout<<"5.exit"<<endl;
+
+
+cout<<"enter your choice: ";
+enter:
+   cin>>opp;
+if(opp=='1'||opp=='2'||opp=='3'||opp=='4'){
+switch(opp){
+case '1':
+    system("cls");
+    Administrator();
+    break;
+case '2':
+    system("cls");
+    patient();
+    break;
+case '3':
+    system("cls");
+    doctor();
+    break;
+case '4':
+    system("cls");
+    hospital();
+    break;
+case '5':
+    system("cls");
+    exit(0);
+}}
+ else
+   { 
+	cout<<"\nwrong input try again: ";
+    goto enter;}
+
+}
+void Administrator()
+{
+    int response,x=1234;
+int pass;
+    cout<<"\nenter passcode";
+    cin>>pass;
+ if(pass==x){
+int pidd;
+bool deletes=false;
+char cho;
+cout<<"For administrator side please enter the id of patient you want to clear(delete) information : ";
+cin>>pidd;
+for(int i=0; i<c;i++){
+
+        if(pidd==p[i].id){
+cout<<"\n[1].name : ";
+cout<<"\n[2].age : ";
+cout<<"\n\nplease enter the specific option you want to delete : ";
+enter:
+cin>>cho;
+if(cho=='1'||cho=='2'||cho=='3'||cho=='4'){
+switch(cho)
+{
+case '1':
+    p[i].name=deletes;
+    cout<<"\nName deleted successfully!";
+    break;
+
+case '2':
+
+    p[i].age=deletes;
+    cout<<"\nAge deleted successfully!";
+    break;}}
+else  {
+        cout<<"\nwrong input try again: ";
+    goto enter;
+ }
+
+
+}}}
+do{
+    cout<<"\npress 1 to go back: ";
+    cin>>response;
+    }while(response!=1);
+     system("cls");
+     menu();
+}
