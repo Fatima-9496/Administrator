@@ -16,14 +16,6 @@ struct patientInfo{
      string passcode2,passcode;
 };
 
-struct doctor{
-     string name;
-     int phone;
-     char address;
-    string passcode;
-
-}d[1000];
-
 void Administrator();
 void menu();
 void patient();
